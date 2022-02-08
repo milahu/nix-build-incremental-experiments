@@ -1,0 +1,15 @@
+[package]
+name = "nix-build-incremental-experiments"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clang = "*" # https://github.com/KyleMayes/clang-rs 2020-11-29 :/
+inkwell = "*" # = llvm-rs # https://github.com/TheDan64/inkwell
+cxx = "*"
+autocxx = "*"
+
+[build-dependencies]
+autocxx-build = "*"
