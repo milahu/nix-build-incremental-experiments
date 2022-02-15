@@ -1,14 +1,45 @@
 // based on https://github.com/KyleMayes/clang-rs/blob/master/examples/structs.rs
 // based on https://clang.llvm.org/extra/doxygen/PPTrace_8cpp_source.html
 // based on https://cxx.rs/tutorial.html
+// todo? https://cxx.rs/context.html?highlight=autocxx#role-of-cxx
 // based on https://github.com/google/autocxx
+
+// todo? https://github.com/googleprojectzero/halfempty bisecting sources for errors
+
+// todo? https://github.com/KyleMayes/clang-sys/blob/master/src/lib.rs
+// todo? https://github.com/KyleMayes/clang-rs
+// todo? https://github.com/TheDan64/inkwell = llvm-rs
 
 //use autocxx::prelude::*;
 
 autocxx::prelude::include_cpp! {
     #include "clang/Tooling/CommonOptionsParser.h" // your header file name
+    /*
+    #include "clang/AST/ASTConsumer.h"
+    #include "clang/AST/ASTContext.h"
+    #include "clang/Basic/SourceManager.h"
+    #include "clang/Driver/Options.h"
+    #include "clang/Frontend/CompilerInstance.h"
+    #include "clang/Frontend/FrontendAction.h"
+    #include "clang/Frontend/FrontendActions.h"
+    #include "clang/Lex/Preprocessor.h"
+    #include "clang/Tooling/Execution.h"
+    #include "clang/Tooling/Tooling.h"
+    #include "llvm/Option/Arg.h"
+    #include "llvm/Option/ArgList.h"
+    #include "llvm/Option/OptTable.h"
+    #include "llvm/Option/Option.h"
+    #include "llvm/Support/CommandLine.h"
+    #include "llvm/Support/FileSystem.h"
+    #include "llvm/Support/GlobPattern.h"
+    #include "llvm/Support/InitLLVM.h"
+    #include "llvm/Support/Path.h"
+    #include "llvm/Support/ToolOutputFile.h"
+    #include "llvm/Support/WithColor.h"
+    */
+
     safety!(unsafe) // see details of unsafety policies described in include_cpp
-    generate!("clang::tooling::CommonOptionsParser::create") // add this line for each function or type you wish to generate
+    generate!("clang::tooling::CommonOptionsParser") // add this line for each function or type you wish to generate
 }
 
 /*
